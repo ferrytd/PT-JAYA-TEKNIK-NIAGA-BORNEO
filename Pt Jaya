@@ -1,0 +1,31 @@
+import zipfile
+
+import os
+
+
+
+# File and folder setup
+
+base_dir = "/mnt/data/"
+
+zip_filename = "/mnt/data/pt_jaya_teknik_niaga_borneo.zip"
+
+html_filename = "index.html"
+
+uploaded_file_path = base_dir + "pt_jaya_teknik_niaga_borneo-1.html"
+
+
+
+# Create a ZIP file
+
+with zipfile.ZipFile(zip_filename, 'w') as zipf:
+
+    # Add the provided HTML file as "index.html" for deployment
+
+    zipf.write(uploaded_file_path, html_filename)
+
+
+
+# Check if the ZIP file was created successfully
+
+os.path.exists(zip_filename)
